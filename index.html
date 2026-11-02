@@ -49,6 +49,12 @@ h2{text-align:center;font-size:clamp(2rem,5vw,3.2rem);font-weight:500;margin:12p
 .cake{font-size:76px;margin:15px 0;filter:drop-shadow(0 8px 10px #120a2233)}
 .wish-btn{background:#f6d98f;color:#3c2639;border:0;border-radius:999px;padding:15px 23px;font-weight:700;cursor:pointer}
 .wish-message{min-height:34px;margin-top:20px;color:#ffe5a8;font:italic 18px Georgia,serif}
+.final-note{display:none;max-width:690px;margin:28px auto 0;padding:28px 26px;background:#fff8ee;color:#4b2a43;border:1px solid #f3d58d;border-radius:22px;box-shadow:0 16px 42px #160b2444;opacity:0;transform:translateY(16px)}
+.final-note.show{display:block;animation:noteReveal .9s ease forwards}
+.final-kicker{text-align:center;text-transform:uppercase;letter-spacing:3px;font:700 10px Arial,sans-serif;color:#a14b6a;margin-bottom:10px}\n.final-note h3{font:italic 28px Georgia,serif;color:#8e3158;margin:0 0 14px}
+.final-note p{font:15px/1.9 Arial,sans-serif;margin:0;color:#604b5a}
+.final-note .signoff{margin-top:18px;color:#9b4b69;font:italic 17px Georgia,serif}
+@keyframes noteReveal{to{opacity:1;transform:translateY(0)}}
 footer{padding:30px 15px;text-align:center;background:#211528;color:#d9bdc9;font:12px Arial,sans-serif;letter-spacing:1px}
 .lightbox{position:fixed;inset:0;background:#130d18ed;z-index:30;display:none;align-items:center;justify-content:center;padding:20px}
 .lightbox img{max-width:95vw;max-height:90vh;object-fit:contain;border:8px solid white;box-shadow:0 10px 50px #0008}
@@ -177,8 +183,17 @@ footer{padding:30px 15px;text-align:center;background:#211528;color:#d9bdc9;font
     <h2>One more reason to celebrate!</h2>
     <p class="intro">Take a little moment, make a wish and let the good things begin.</p>
     <div class="cake">🎂</div>
-    <button class="wish-btn" onclick="makeWish()">Make a wish ✨</button>
+    <button class="wish-btn" id="wishBtn" onclick="makeWish()">Make a wish &amp; blow the candles ✨</button>
     <div class="wish-message" id="wishMessage" aria-live="polite"></div>
+    <div class="final-note" id="finalNote" aria-live="polite">
+      <div class="final-kicker">A little something before the celebration ends</div>
+      <h3>For you, Ruth Akka 💛</h3>
+      <p>Some moments may seem small, but they become lovely memories when we look back on them. I hope today gives you plenty of those moments — the kind that make you smile even after the day is over.</p>
+      <p>Thank you for the cheerful conversations, the laughs, and the little moments that make ordinary days brighter. I wanted to make this page as a small way to celebrate you and add one more happy memory to your birthday.</p>
+      <p>As you step into another year, I wish you the confidence to follow your dreams, the strength to get through every challenge, and the happiness of having good people and beautiful experiences around you. May new opportunities find you, may your efforts bring you success, and may there always be something wonderful waiting around the corner.</p>
+      <p>Keep being yourself, keep smiling, and never forget to make time for the things that make you happy. You deserve a year filled with laughter, peace, exciting little adventures, and memories worth keeping.</p>
+      <div class="signoff">Have a beautiful year ahead.<br><strong>Happy Birthday, Ruth Akka! 🌷✨</strong></div>
+    </div>
   </div>
 </section>
 <footer>MADE WITH GOOD WISHES · HAPPY BIRTHDAY, RUTH AKKA</footer>
@@ -222,7 +237,15 @@ function burstConfetti() {
   }
 }
 function makeWish() {
-  document.getElementById('wishMessage').textContent='May your wishes find their way to you. Happy Birthday, Ruth Akka! 💛';
+  const message = document.getElementById('wishMessage');
+  const note = document.getElementById('finalNote');
+  const button = document.getElementById('wishBtn');
+  message.textContent = 'Your wish is yours to keep… now let the celebration begin! ✨';
+  button.textContent = 'Wish sent! 💛';
+  button.disabled = true;
+  button.style.opacity = '.8';
+  note.classList.add('show');
+  setTimeout(() => note.scrollIntoView({behavior:'smooth', block:'center'}), 350);
   burstConfetti();
 }
 </script>
