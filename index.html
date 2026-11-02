@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#25172c">
+<title>Happy Birthday, Ruth Akka!</title>
+<style>
+:root{--plum:#28182d;--berry:#8e3158;--rose:#f3a5b8;--gold:#e9c56f;--cream:#fff8ee;--ink:#342338}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+button{font:inherit}
+.hero{min-height:100svh;position:relative;overflow:hidden;display:grid;place-items:center;text-align:center;padding:32px 20px;background:radial-gradient(circle at 15% 15%,#ffe4e9 0 9%,transparent 10%),radial-gradient(circle at 90% 25%,#f9df9a 0 8%,transparent 9%),linear-gradient(145deg,#28182d,#5d2949 55%,#a74c69);color:#fff8ee}
+.hero:before,.hero:after{content:"✦  ✧  ✦  ✧  ✦";position:absolute;color:#f4d98f;letter-spacing:18px;font-size:22px;opacity:.75;animation:drift 12s linear infinite}
+.hero:before{top:8%;left:-5%} .hero:after{bottom:9%;right:-8%;animation-direction:reverse}
+@keyframes drift{50%{transform:translateX(35px) rotate(8deg)}}
+.hero-inner{max-width:780px;position:relative;z-index:1}
+.eyebrow{letter-spacing:5px;text-transform:uppercase;font:600 11px Arial,sans-serif;color:#f6d88c}
+.hero h1{font-size:clamp(3rem,10vw,6.7rem);line-height:.95;margin:22px 0 16px;font-weight:500}
+.hero h1 span{display:block;color:#f5c8d2;font-style:italic;font-size:.68em;margin-top:14px}
+.hero p{font:16px/1.7 Arial,sans-serif;color:#f9eaf0;max-width:560px;margin:22px auto}
+.open-btn,.pill{border:1px solid #f1d58f;border-radius:999px;padding:14px 24px;background:#f4d98f;color:#352039;font:700 13px Arial,sans-serif;letter-spacing:.5px;cursor:pointer;box-shadow:0 8px 24px #170d2244;transition:.2s}
+.open-btn:hover,.pill:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.music-control{position:fixed;z-index:10;right:15px;top:15px;border:1px solid #f0d38a;background:#2b1a30eF;color:#fff6e8;border-radius:999px;padding:11px 15px;font:600 12px Arial,sans-serif;cursor:pointer;backdrop-filter:blur(8px)}
+.music-note{position:fixed;z-index:10;right:16px;top:61px;background:#fff8ee;color:#5b3450;border-radius:10px;padding:8px 12px;font:11px Arial,sans-serif;box-shadow:0 4px 16px #0002;display:none;max-width:230px}
+section{padding:76px 20px}
+.section-inner{max-width:1080px;margin:auto}
+.kicker{text-align:center;text-transform:uppercase;letter-spacing:4px;color:#a14b6a;font:700 11px Arial,sans-serif}
+h2{text-align:center;font-size:clamp(2rem,5vw,3.2rem);font-weight:500;margin:12px 0 14px;color:#49263f}
+.intro{text-align:center;max-width:650px;margin:0 auto 35px;font:15px/1.8 Arial,sans-serif;color:#735f6d}
+.note-card{max-width:760px;margin:30px auto 0;padding:34px clamp(22px,5vw,52px);background:#fff;border:1px solid #f0d9d0;border-radius:20px;box-shadow:0 18px 45px #6b3a5012;position:relative}
+.note-card:before{content:"✿";position:absolute;right:22px;top:12px;color:#d88a9d;font-size:28px}
+.note-card p{font:16px/1.95 Arial,sans-serif;color:#594654;margin:0}
+.signature{text-align:right;color:#a14b6a;font-style:italic;margin-top:20px}
+.gallery-section{background:#f8e9e7}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.photo-card{position:relative;padding:7px 7px 26px;background:#fff;border:0;box-shadow:0 8px 24px #61394a20;transform:rotate(var(--tilt));cursor:zoom-in;transition:transform .25s,box-shadow .25s}
+.photo-card:nth-child(3n){--tilt:1.7deg} .photo-card:nth-child(3n+1){--tilt:-1.4deg} .photo-card:nth-child(3n+2){--tilt:.5deg}
+.photo-card:hover{transform:translateY(-6px) rotate(0) scale(1.025);box-shadow:0 16px 30px #61394a30;z-index:2}
+.photo-card img{display:block;width:100%;height:250px;object-fit:cover;background:#ead8d8}
+.photo-number{position:absolute;bottom:7px;left:10px;font:9px Arial,sans-serif;letter-spacing:2px;color:#8a6373}
+.videos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:850px;margin:35px auto 0}
+.video-card{background:#fff;border-radius:18px;padding:10px;box-shadow:0 10px 28px #61394a16}
+.video-card video{width:100%;max-height:430px;display:block;border-radius:12px;background:#211722}
+.video-card p{font:600 13px Arial,sans-serif;color:#79445e;margin:13px 8px 8px}
+.wish-panel{background:linear-gradient(135deg,#3a203d,#7e3558);color:#fff8ee;text-align:center}
+.wish-panel h2{color:#fff2df}
+.wish-panel .intro{color:#f5dfe6}
+.cake{font-size:76px;margin:15px 0;filter:drop-shadow(0 8px 10px #120a2233)}
+.wish-btn{background:#f6d98f;color:#3c2639;border:0;border-radius:999px;padding:15px 23px;font-weight:700;cursor:pointer}
+.wish-message{min-height:34px;margin-top:20px;color:#ffe5a8;font:italic 18px Georgia,serif}
+footer{padding:30px 15px;text-align:center;background:#211528;color:#d9bdc9;font:12px Arial,sans-serif;letter-spacing:1px}
+.lightbox{position:fixed;inset:0;background:#130d18ed;z-index:30;display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox img{max-width:95vw;max-height:90vh;object-fit:contain;border:8px solid white;box-shadow:0 10px 50px #0008}
+.lightbox button{position:absolute;top:18px;right:20px;background:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:24px;cursor:pointer}
+.confetti{position:fixed;top:-20px;z-index:25;pointer-events:none;width:9px;height:14px;animation:fall 3.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.2}}
+@media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr);gap:11px}.photo-card img{height:210px}.videos{grid-template-columns:1fr}section{padding:58px 16px}}
+@media(max-width:380px){.photo-card img{height:165px}.music-control{right:9px;top:9px}}
+</style>
+</head>
+<body>
+<button class="music-control" id="musicBtn" type="button">♫ Music: OFF</button>
+<div class="music-note" id="musicNote">Add your MP3 as <b>assets/kalyani-whistle.mp3</b> to enable music.</div>
+<audio id="bgMusic" loop preload="none"><source src="assets/kalyani-whistle.mp3" type="audio/mpeg"></audio>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow">A little celebration made with care</div>
+    <h1>Happy Birthday<span>Ruth Akka ✨</span></h1>
+    <p>A page full of smiles, lovely moments and warm wishes — made especially to celebrate your day.</p>
+    <button class="open-btn" onclick="document.getElementById('message').scrollIntoView({behavior:'smooth'}); burstConfetti()">Open your birthday surprise ↓</button>
+  </div>
+</header>
+
+<section id="message">
+  <div class="section-inner">
+    <div class="kicker">A birthday note</div>
+    <h2>Wishing you a lovely year ahead</h2>
+    <p class="intro">A small message to make your special day a little brighter.</p>
+    <div class="note-card">
+      <p>Happy Birthday, Ruth Akka! 🎂🌸 Wishing you a day filled with happiness, laughter and beautiful memories. May all your dreams come true, and may the coming year bring you good health, success and many wonderful moments. Keep smiling, keep shining and enjoy your special day. Have a fantastic year ahead!</p>
+      <div class="signature">With warm wishes ✨</div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="gallery">
+  <div class="section-inner">
+    <div class="kicker">Little snapshots</div>
+    <h2>Birthday scrapbook</h2>
+    <p class="intro">A collection of photos from the celebration. Tap any picture to view it larger.</p>
+    <div class="gallery">
+        <button class="photo-card" type="button" aria-label="Open photo 1" onclick="openLightbox('assets/photo-01.jpg')">
+          <img src="assets/photo-01.jpg" alt="Birthday memory 1" loading="lazy">
+          <span class="photo-number">MEMORY 01</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 2" onclick="openLightbox('assets/photo-02.jpg')">
+          <img src="assets/photo-02.jpg" alt="Birthday memory 2" loading="lazy">
+          <span class="photo-number">MEMORY 02</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 3" onclick="openLightbox('assets/photo-03.jpg')">
+          <img src="assets/photo-03.jpg" alt="Birthday memory 3" loading="lazy">
+          <span class="photo-number">MEMORY 03</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 4" onclick="openLightbox('assets/photo-04.jpg')">
+          <img src="assets/photo-04.jpg" alt="Birthday memory 4" loading="lazy">
+          <span class="photo-number">MEMORY 04</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 5" onclick="openLightbox('assets/photo-05.jpg')">
+          <img src="assets/photo-05.jpg" alt="Birthday memory 5" loading="lazy">
+          <span class="photo-number">MEMORY 05</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 6" onclick="openLightbox('assets/photo-06.jpg')">
+          <img src="assets/photo-06.jpg" alt="Birthday memory 6" loading="lazy">
+          <span class="photo-number">MEMORY 06</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 7" onclick="openLightbox('assets/photo-07.jpg')">
+          <img src="assets/photo-07.jpg" alt="Birthday memory 7" loading="lazy">
+          <span class="photo-number">MEMORY 07</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 8" onclick="openLightbox('assets/photo-08.jpg')">
+          <img src="assets/photo-08.jpg" alt="Birthday memory 8" loading="lazy">
+          <span class="photo-number">MEMORY 08</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 9" onclick="openLightbox('assets/photo-09.jpg')">
+          <img src="assets/photo-09.jpg" alt="Birthday memory 9" loading="lazy">
+          <span class="photo-number">MEMORY 09</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 10" onclick="openLightbox('assets/photo-10.jpg')">
+          <img src="assets/photo-10.jpg" alt="Birthday memory 10" loading="lazy">
+          <span class="photo-number">MEMORY 10</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 11" onclick="openLightbox('assets/photo-11.jpg')">
+          <img src="assets/photo-11.jpg" alt="Birthday memory 11" loading="lazy">
+          <span class="photo-number">MEMORY 11</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 12" onclick="openLightbox('assets/photo-12.jpg')">
+          <img src="assets/photo-12.jpg" alt="Birthday memory 12" loading="lazy">
+          <span class="photo-number">MEMORY 12</span>
+        </button>
+        <button class="photo-card" type="button" aria-label="Open photo 13" onclick="openLightbox('assets/photo-13.jpg')">
+          <img src="assets/photo-13.jpg" alt="Birthday memory 13" loading="lazy">
+          <span class="photo-number">MEMORY 13</span>
+        </button>
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="section-inner">
+    <div class="kicker">Press play</div>
+    <h2>Moments in motion</h2>
+    <p class="intro">A couple of video memories from the celebration.</p>
+    <div class="videos">
+        <div class="video-card">
+          <video controls playsinline preload="metadata">
+            <source src="assets/memory-video-1.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <p>Birthday moment 1</p>
+        </div>
+        <div class="video-card">
+          <video controls playsinline preload="metadata">
+            <source src="assets/memory-video-2.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <p>Birthday moment 2</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="wish-panel">
+  <div class="section-inner">
+    <div class="kicker" style="color:#f4d98f">Make a birthday wish</div>
+    <h2>One more reason to celebrate!</h2>
+    <p class="intro">Take a little moment, make a wish and let the good things begin.</p>
+    <div class="cake">🎂</div>
+    <button class="wish-btn" onclick="makeWish()">Make a wish ✨</button>
+    <div class="wish-message" id="wishMessage" aria-live="polite"></div>
+  </div>
+</section>
+<footer>MADE WITH GOOD WISHES · HAPPY BIRTHDAY, RUTH AKKA</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button aria-label="Close" onclick="closeLightbox()">×</button>
+  <img id="lightboxImage" alt="Expanded birthday memory" onclick="event.stopPropagation()">
+</div>
+<script>
+const audio = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+const musicNote = document.getElementById('musicNote');
+let musicOn = false;
+musicBtn.addEventListener('click', async () => {
+  if (musicOn) {
+    audio.pause(); musicOn = false; musicBtn.textContent = '♫ Music: OFF'; musicNote.style.display = 'none'; return;
+  }
+  try {
+    await audio.play(); musicOn = true; musicBtn.textContent = '♫ Music: ON'; musicNote.style.display = 'none';
+  } catch (e) {
+    musicNote.style.display = 'block';
+    musicNote.textContent = 'Music file not added yet. Add assets/kalyani-whistle.mp3, then tap Music.';
+  }
+});
+function openLightbox(src) {
+  document.getElementById('lightboxImage').src = src;
+  document.getElementById('lightbox').style.display = 'flex';
+}
+function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+function burstConfetti() {
+  const symbols = ['✦','✧','●','♥'];
+  for(let i=0;i<45;i++) {
+    const el=document.createElement('span'); el.className='confetti';
+    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left=Math.random()*100+'vw';
+    el.style.color=['#e8b94f','#f08ca8','#fff1c8','#b76b92'][i%4];
+    el.style.fontSize=(10+Math.random()*14)+'px';
+    el.style.animationDuration=(2.5+Math.random()*2)+'s';
+    document.body.appendChild(el); setTimeout(()=>el.remove(),5000);
+  }
+}
+function makeWish() {
+  document.getElementById('wishMessage').textContent='May your wishes find their way to you. Happy Birthday, Ruth Akka! 💛';
+  burstConfetti();
+}
+</script>
+</body>
+</html>
